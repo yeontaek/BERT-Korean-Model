@@ -13,7 +13,7 @@ prefix = 'bert_kor'
 cmd = parameter.format(input_file, prefix, vocab_size)
 
 spm.SentencePieceTrainer.Train(cmd)
-```
+```   
 
 추가로 생성된 vocab파일에는 존재하지 않는 [PAD, CLS, SEP, MASK] 등을 추가하는 옵션을 추가해줘야 합니다.
 
