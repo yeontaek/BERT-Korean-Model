@@ -37,6 +37,23 @@ spm.SentencePieceTrainer.Train(cmd)
 ```   
 <br>
 
+출력 예시
+```python
+import sentencepiece as spm
+
+psp = spm.SentencePieceProcessor()
+sp.Load('{}.model'.format(prefix))
+token = sp.EncodeAsPieces('오늘의 연합뉴스 기사입니다')
+print(token)
+
+['▁오늘의', '▁연합', '뉴스', '▁기사', '입니다']
+```   
+
+
+
+
+
+
 ## 사전 학습 데이터 준비
  <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터의 구성은 "Next sentence prediction" Task을 위해 한 줄에 한 문장씩 구성하고 Document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
  
