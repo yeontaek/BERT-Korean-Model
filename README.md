@@ -16,7 +16,6 @@ cmd = parameter.format(input_file, prefix, vocab_size)
 spm.SentencePieceTrainer.Train(cmd)
 ```   
 <br>
-<br>
 추가로 BERT 모델에 해당 사전을 사용하기 위해서 [PAD], [CLS], [SEP], [MASK]를 추가하는 옵션 <code>--user_defined_symbols</code> 을 적용하였습니다.
 <br>
 
