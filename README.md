@@ -19,7 +19,6 @@ spm.SentencePieceTrainer.Train(cmd)
 추가로 BERT 모델에 사용하기 위해서는 사전에 해당 [PAD], [CLS], [SEP], [MASK]를 추가하는 옵션 <code>--user_defined_symbols</code> 을 적용해야 합니다.
 <br>
 <br>
-<br>
 
 ```python
 parameter = '--input={} --model_prefix={} --vocab_size={} --user_defined_symbols={}'
