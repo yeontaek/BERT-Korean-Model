@@ -32,7 +32,7 @@ spm.SentencePieceTrainer.Train(cmd)
 <br>
 
 ## 사전 학습 데이터 준비
- <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터는 Next sentence prediction Task을 위해 한 줄에 한 문장씩 구성하고 document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다. 
+ <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터는 Next sentence prediction Task을 위해 한 줄에 한 문장씩 구성하고 document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
  
 ~~~
 이것은 
