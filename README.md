@@ -15,6 +15,6 @@ cmd = parameter.format(input_file, prefix, vocab_size)
 spm.SentencePieceTrainer.Train(cmd)
 ```   
 <br>
-BERT 모델에 사용하기 위해서는 사전에 해당 [PAD, CLS, SEP, MASK]를 추가하는 옵션을 적용해야 합니다.
+BERT 모델에 사용하기 위해서는 사전에 해당 [PAD], [CLS], [SEP], [MASK]를 추가하는 옵션을 적용해야 합니다.
 
 
