@@ -16,7 +16,8 @@ cmd = parameter.format(input_file, prefix, vocab_size)
 spm.SentencePieceTrainer.Train(cmd)
 ```   
 <br>
-BERT 모델에 SentencePiece 사전을 사용하기 위해서 [PAD], [CLS], [SEP], [MASK]를 추가해줘야 합니다. 이를 위해 <code>--user_defined_symbols</code> 옵션을 적용하였습니다.
+BERT 모델에 SentencePiece 사전을 사용하기 위해서 [PAD], [CLS], [SEP], [MASK]등의 token을 추가해줘야 합니다. 이를 위해 <code>--user_defined_symbols</code> 옵션을 적용하였습니다.
+<br>
  
 ```python
 parameter = '--input={} --model_prefix={} --vocab_size={} --user_defined_symbols={}'
