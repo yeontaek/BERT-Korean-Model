@@ -30,4 +30,5 @@ cmd = parameter.format(input_file, prefix, vocab_size,user_defined_symbols)
 spm.SentencePieceTrainer.Train(cmd)
 ```   
 <br>
+
 ## 사전 학습 데이터 준비
