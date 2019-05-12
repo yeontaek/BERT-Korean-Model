@@ -19,12 +19,13 @@ spm.SentencePieceTrainer.Train(cmd)
 BERT 모델에 사용하기 위해서는 사전에 해당 [PAD], [CLS], [SEP], [MASK]를 추가하는 옵션 <code>--user_defined_symbols</code> 을 적용해야 합니다.<br>   
 
 ```python
-parameter = '--input={} --model_prefix={} --vocab_size={} ----user_defined_symbols'
+parameter = '--input={} --model_prefix={} --vocab_size={} --user_defined_symbols={}'
 
 input_file = 'corpus.txt'
 vocab_size = 32000
 prefix = 'bert_kor'
-cmd = parameter.format(input_file, prefix, vocab_size)
+user_defined_symbols = [PAD],[CLS],[SEP],[MASK]
+cmd = parameter.format(input_file, prefix, vocab_size,user_defined_symbols)
 
 spm.SentencePieceTrainer.Train(cmd)
 ```   
