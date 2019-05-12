@@ -43,7 +43,7 @@ spm.SentencePieceTrainer.Train(cmd)
 ~~~
 <br>
 
-## BERT pre-training
+## BERT Pre-training
 모델 매개 변수는 <code>learning_rate=5e-5</code>, <code>train_batch_size=32</code>, <code>max_seq_length=128</code>로 학습했습니다.
 
 
