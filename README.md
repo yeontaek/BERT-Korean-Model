@@ -1,1 +1,1 @@
-# bert_korea
+# BERT with SentencePiece for Korean text
