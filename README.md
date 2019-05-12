@@ -6,6 +6,8 @@ This is a repository of Korean BERT model with SentencePiece tokenizer.
  <br>
  
 ```python
+import sentencepiece as spm
+
 parameter = '--input={} --model_prefix={} --vocab_size={}'
 
 input_file = 'corpus.txt'
@@ -21,12 +23,14 @@ BERT 모델에 SentencePiece 사전을 사용하기 위해서 [PAD], [CLS], [SEP
 <br>
  
 ```python
+import sentencepiece as spm
+
 parameter = '--input={} --model_prefix={} --vocab_size={} --user_defined_symbols={}'
 
 input_file = 'corpus.txt'
 vocab_size = 32000
 prefix = 'bert_kor'
-user_defined_symbols = [PAD],[CLS],[SEP],[MASK]
+user_defined_symbols = '[PAD],[UNK],[CLS],[SEP],[MASK]'
 cmd = parameter.format(input_file, prefix, vocab_size,user_defined_symbols)
 
 spm.SentencePieceTrainer.Train(cmd)
