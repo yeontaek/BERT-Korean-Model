@@ -33,7 +33,7 @@ spm.SentencePieceTrainer.Train(cmd)
 ```   
 
 ## 사전 학습 데이터 준비
- <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 ㅠBERT pre-training에 적합한 <code>.tfrecord</code>형식으로 변환하였습니다. 학습 데이터는 IsNext 정보 작성을 위해 문장이면서 document 사이에 빈 줄을 삽입 할 것을 권장하고 있습니다. 
+ <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터는 IsNext 정보 작성을 위해 문장이면서 document 사이에 빈 줄을 삽입 할 것을 권장하고 있습니다. 
  
  
  그러나이 스크립트는 모든 데이터를 메모리에로드 사양으로되어 있기 때문에, 대량의 데이터가 메모리 부족하게되어 버립니다. 후 pre-training에서 여러 파일을 학습 데이터와 있기 때문에 여기에서는 1/10 씩 .tf_record을 만들었습니다 (하나의 파일이 약 2 GB). 얼마나 데이터를 복제하거나 등의 각종 매개 변수는 공식 저장소의 것으로 갖추고 있습니다.
