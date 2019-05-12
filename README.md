@@ -37,16 +37,16 @@ spm.SentencePieceTrainer.Train(cmd)
 ```   
 <br>
 
-출력 예시
+출력 예시 :
 ```python
 import sentencepiece as spm
 
 psp = spm.SentencePieceProcessor()
 sp.Load('{}.model'.format(prefix))
-token = sp.EncodeAsPieces('오늘의 연합뉴스 기사입니다')
+token = sp.EncodeAsPieces('나는 오늘 아침밥을 먹었다.')
 print(token)
 
-['▁오늘의', '▁연합', '뉴스', '▁기사', '입니다']
+['▁나는', '▁오늘', '▁아침', '밥을', '▁먹었다', '.']
 ```   
 
 
