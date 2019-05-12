@@ -31,7 +31,6 @@ cmd = parameter.format(input_file, prefix, vocab_size,user_defined_symbols)
 
 spm.SentencePieceTrainer.Train(cmd)
 ```   
-<br>
 
 ## 사전 학습 데이터 준비
  <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 ㅠBERT pre-training에 적합한 <code>.tfrecord</code>형식으로 변환하였습니다. 학습 데이터는 IsNext 정보 작성을 위해 문장이면서 document 사이에 빈 줄을 삽입 할 것을 권장하고 있습니다. 
