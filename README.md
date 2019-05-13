@@ -2,7 +2,7 @@
 This is a repository of Korean BERT model with SentencePiece tokenizer.
 
 ## SentencePiece tokenizer 학습
- 한국어 전용 BERT 모델을 만들기 위해서는 한국어에 적합한 tokenizer로 수정할 필요가 있었습니다. 이를 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 총 1400만 문장(위키피디아, 나무위키, 뉴스 데이터)을 이용하여 32,000개의 vocabulary (subwords)를 학습하였습니다.
+ 한국어 전용 BERT 모델을 만들기 위해서는 한국어에 적합한 tokenizer로 수정할 필요가 있었습니다. 이를 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다.  1400만 문장(위키피디아, 나무위키, 뉴스 데이터)을 이용하여 32,000개의 vocabulary (subwords)를 학습하였습니다.
  <br>
  
 ```python
