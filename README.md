@@ -41,7 +41,7 @@ spm.SentencePieceTrainer.Train(cmd)
 ```python
 import sentencepiece as spm
 
-psp = spm.SentencePieceProcessor()
+sp = spm.SentencePieceProcessor()
 sp.Load('{}.model'.format(prefix))
 token = sp.EncodeAsPieces('나는 오늘 아침밥을 먹었다.')
 print(token)
