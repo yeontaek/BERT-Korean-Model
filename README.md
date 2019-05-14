@@ -80,6 +80,22 @@ print(token)
 <br>
 
 ## BERT Pre-training
+SentencePiece 모델을 사용하기 위해 <code>tokenization.py</code>에 아래 코드를 추가하였습니다. 
+
+```python
+class SentencePieceTokenizer(object):
+  def __init__(self, model_file=None, do_lower_case=False):
+    self.tokenizer = spm.SentencePieceProcessor()
+    self.tokenizer.Load(model_file)
+    self.do_lower_case = do_lower_case
+
+  def tokenize(self, text):
+    text = convert_to_unicode(text)
+    output_tokens = self.tokenizer.EncodeAsPieces(text)
+    return output_tokens
+```
+<br>
+
 모델 매개 변수는 <code>learning_rate=2e-5</code>, <code>train_batch_size=32</code>, <code>max_seq_length=128</code>로 학습했습니다.
 <br>
 <br>
