@@ -48,11 +48,7 @@ print(token)
 
 ['▁나는', '▁오늘', '▁아침', '밥을', '▁먹었다', '.']
 ```   
-
-
-
-
-
+<br>
 
 ## 사전 학습 데이터 준비
  <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터의 구성은 "Next sentence prediction" Task을 위해 한 줄에 한 문장씩 구성하고 Document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
@@ -77,7 +73,6 @@ print(token)
 그러나 최근에 도네 강, 고카이 강 등의 제방의 고기능화에 의해 하천의 범람에 의한 침수 피해는 거의 없어졌다.
 한편 집중호우에 의해 시내의 저지 등에서는 도로가 일부 침수하는 등의 피해가 일어난다.
 ~~~
-<br>
 <br>
 
 ## BERT Pre-training
