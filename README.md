@@ -80,7 +80,7 @@ print(token)
 <br>
 
 ## BERT Pre-training
-SentencePiece 모델을 사용하기 위해 <code>tokenization.py</code>에 아래 코드를 추가하였습니다. 
+SentencePiece 모델을 사용하기 위해 <code>tokenization.py</code>에 아래 코드를 추가하였습니다. 자세한 내용은 코드 참조바랍니다. 
 
 ```python
 class SentencePieceTokenizer(object):
