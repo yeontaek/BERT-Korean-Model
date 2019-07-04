@@ -120,7 +120,7 @@ BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.gi
 | BERT-Base, Korean Model | 00% | 00% |
 | BERT-Large, Korean Model | 00% | 00% |
 
-## 정리 
+## 정리
 
 1. SentencePiece를 사용하여 한국어 사전 구축 후 학습
 
@@ -128,6 +128,7 @@ BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.gi
 
 3. 학습 된 한국어 pre-training model을 KorQuAD Task에서 평가 
 
+학습 및 모델 사용 관련 궁금한 사항이 있으시면 oh31400@naver.com 메일로 문의 부탁립니다. 
 
 
 
