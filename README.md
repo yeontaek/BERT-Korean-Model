@@ -1,7 +1,7 @@
 # BERT with SentencePiece for Korean text
 This is a repository of Korean BERT model with SentencePiece tokenizer.
 
-* BERT-Base,Korean Model: 12-layer, 768-hidden, 12-heads, 110M parameters
+* BERT-Base, Korean Model: 12-layer, 768-hidden, 12-heads, 110M parameters
 * BERT-Large, Korean Model: 24-layer, 1024-hidden, 16-heads, 340M parameters
 
 ## SentencePiece tokenizer 학습
