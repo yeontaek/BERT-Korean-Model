@@ -101,11 +101,6 @@ num_train_steps = 100000
 ## 성능 평가  
 BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. BERT-Multilingual Model과 성능 비교 실험을 진행하였으며, 하이퍼 파라미터는 모두 동일한 값으로 사용하였습니다. 성능 평과 결과는 아래와 같습니다.   
 
-| BERT Model | F1 | EM |
-|---|:---:|---:|
-| BERT-Base, Multilingual Cased | 89.9% | 70.29% |
-| BERT-Base, Korean Model | 00% | 00% |
-| BERT-Large, Korean Model | 00% | 00% |
 
 ## 실험 
 
