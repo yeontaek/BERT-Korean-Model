@@ -98,18 +98,6 @@ masked_lm_prob = 0.15
 max_predictions_per_seq = 77
 num_train_steps = 100000
 ```   
-* 최종 학습 결과
-```python
-INFO:tensorflow:  ***** Eval results *****
-INFO:tensorflow:  global_step = 900000
-INFO:tensorflow:  loss = 1.2067676
-INFO:tensorflow:  masked_lm_accuracy = 0.71964335
-INFO:tensorflow:  masked_lm_loss = 1.2389321
-INFO:tensorflow:  next_sentence_accuracy = 0.9998438
-INFO:tensorflow:  next_sentence_loss = 0.00018169895
-``` 
-
-
 
 ## 성능 평가  
 BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 평가하였습니다. 성능 비교를 위해 BERT-Multilingual Model과 실험을 진행하였으며, 하이퍼파라미터는 기본값으로 사용하였습니다. 성능 결과는 아래와 같습니다.   
