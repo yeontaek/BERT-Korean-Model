@@ -79,6 +79,7 @@ create_pretraining_data.py를 사용하여 BERT pre-training에 적합한 <code>
 ## BERT Pre-training
 학습 시간 문제로 한국어 위키데이터만을 사용하여 학습을 진행하였으며, 모델의 하이퍼파라미터는 논문과 동일하게 사용하였습니다. 오리지널 논문과 동일하게 구축하고자 n-gram masking은 적용하지 않았습니다. 마지막으로 학습 방법은 논문에 나와있는 것처럼 128 length 90%, 512 length 10%씩 학습을 진행하여, 총 100만 step을 진행했습니다. 
 <br>
+<br>
 학습 파라미터(base model 기준)
 ```python
 learning_rate = 1e-4
@@ -88,7 +89,7 @@ masked_lm_prob = 0.15
 max_predictions_per_seq = 20
 ```   
 <br>
-## 성능 평가  
+### 성능 평가  
 BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. 파라미터는 모두 동일한 값으로 실험을 진행하였습니다.  
 
 | BERT Model | F1 | EM |
