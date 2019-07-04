@@ -120,6 +120,8 @@ BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.gi
 | BERT-Base, Korean Model | 00% | 00% |
 | BERT-Large, Korean Model | 00% | 00% |
 
+
+
 ## 기타
 
 학습 및 모델 사용 관련 궁금한 사항이 있으시면 oh31400@naver.com 메일로 문의 부탁립니다. 
