@@ -90,8 +90,7 @@ max_predictions_per_seq = 20
 <br>
 
 ## 성능 평가
-BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다.
-
+BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. 파라미터는 모두 동일한 파라미터에서 실험을 진행하였습니다.  
 
 | BERT Model | F1 | EM |
 |---|:---:|---:|
@@ -99,6 +98,9 @@ BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.gi
 | `BERT-Base, Korean Model` | 73% | 43% |
 | `BERT-Large, Korean Model` | 88% | 59% |
 
+
+
+##기타 
 
 
 
