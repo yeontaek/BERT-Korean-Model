@@ -2,18 +2,19 @@
 This is a repository of Korean BERT model with SentencePiece tokenizer.
 
 ## SentencePiece tokenizer 학습
- 한국어 전용 BERT 모델을 만들기 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 1억 8천만 문장(위키피디아, 나무위키, 뉴스 데이터) 중 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다. 모델 type은 <code>--model_type</code> 옵션을 이용하여 bpe type으로 구축하였습니다. 
+ 한국어 전용 BERT 모델을 만들기 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 1억 8천만 문장(위키피디아, 나무위키, 뉴스 데이터)을 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다. 모델 type은 <code>--model_type</code> 옵션을 이용하여 bpe type으로 구축하였습니다. 
  <br>
  
 ```python
 import sentencepiece as spm
 
-parameter = '--input={} --model_prefix={} --vocab_size={}'
+parameter = '--input={} --model_prefix={} --vocab_size={} --model_type={}'
 
 input_file = 'corpus.txt'
 vocab_size = 32000
 prefix = 'bert_kor'
-cmd = parameter.format(input_file, prefix, vocab_size)
+model_type = 'bpe'
+cmd = parameter.format(input_file, prefix, vocab_size, model_type)
 
 spm.SentencePieceTrainer.Train(cmd)
 ```   
@@ -75,7 +76,7 @@ print(token)
 <br>
 
 ## BERT Pre-training
-학습 시간 문제로 인해 한국어 위키데이터만을 사용하여 학습을 진행하였으며, 모델 매개 변수는 논문과 동일한 파라미터를 사용하였습니다. 또한 논문에 나와있는 것처럼 128 length 90%, 512 length 10%씩 진행하여, 총 100만 step을 진행했습니다. 
+학습 시간 문제로 한국어 위키데이터만을 사용하여 학습을 진행하였으며, 모델의 하이퍼파라미터는 논문과 동일하게 사용하였습니다. 또한 논문에 나와있는 것처럼 128 length 90%, 512 length 10%씩 학습을 진행하였으며, 총 100만 step을 진행했습니다.
 <br>
 <br>
 학습 파라미터(base model 기준)
@@ -94,9 +95,9 @@ BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.gi
 
 | BERT Model | F1 | EM |
 |---|:---:|---:|
-| `BERT-Base, Multilingual Cased` | 89% | 70% |
-| `BERT-Base, Korean Model` | 73% | 43% |
-| `BERT-Large, Korean Model` | 88% | 59% |
+| BERT-Base, Multilingual Cased | 89% | 70% |
+| BERT-Base, Korean Model | 73% | 43% |
+| BERT-Large, Korean Model | 88% | 59% |
 
 
 
