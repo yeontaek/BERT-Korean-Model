@@ -103,7 +103,7 @@ num_train_steps = 100000
 BERT Model 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 평가하였습니다. 성능 비교를 위해 BERT-Multilingual Model과 실험을 진행하였으며, 하이퍼파라미터는 기본값으로 사용하였습니다. 성능 결과는 아래와 같습니다.   
 
 | Model | F1 |
-|---|:---:|
+|:---:|:---:|
 | BiDAF (single) | 83% |
 | DocQA (single) | 85.91% |
 | BERT-Base, Multilingual Cased (single) | 89.9% |
@@ -114,7 +114,7 @@ BERT Model 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.githu
 각 step별 KorQuAD Task의 F1 Score입니다. Step이 늘어날 수록 F1 Score가 늘어나는 것을 확인할 수 있었습니다. 
 
 | Step | seq_length | F1 |
-|---|:---:|---:|
+|:---:|:---:|:---:|
 | 40만 | 128 | 73.98% |
 | 60만 | 128 | 77.15% |
 | 90만 | 128| 78.64% |
