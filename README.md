@@ -120,15 +120,13 @@ BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.gi
 | BERT-Base, Korean Model | 00% | 00% |
 | BERT-Large, Korean Model | 00% | 00% |
 
-## 실험 
+## 정리 
 
-1. 데이터 전처리 
+1. SentencePiece를 사용하여 한국어 사전 구축 후 학습
 
-2. 사전 구축 
+2. Pre-training Data는 한국어 위키데이터를 사용(약 350만 문장)
 
-
-3. 
-
+3. 학습 된 한국어 pre-training model을 KorQuAD Task에서 평가 
 
 
 
