@@ -111,12 +111,13 @@ BERT Model 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.githu
 | **BERT-Large, Korean Model(our model)** | 00% |
 
 ## 추가 실험
+각 step별 KorQuAD Task의 F1 Score입니다. Step이 늘어날 수록 F1 Score가 늘어나는 것을 확인할 수 있었습니다. 
 
 | Step | seq_length | F1 |
 |---|:---:|---:|
 | 40만 | 128 | 73.98% |
 | 60만 | 128 | 77.15% |
-| 90만 | 128| 78.64 |
+| 90만 | 128| 78.64% |
 | 100만 | 512 | 00% |
 | 110만 | 512 | 00% |
 
