@@ -88,6 +88,16 @@ masked_lm_prob = 0.15
 max_predictions_per_seq = 20
 num_train_steps = 900000
 ```   
+
+학습 파라미터(base model 기준, seq=512)
+```python
+learning_rate = 1e-4
+train_batch_size = 256 
+max_seq_length = 512
+masked_lm_prob = 0.15
+max_predictions_per_seq = 77
+num_train_steps = 100000
+```   
 ## 성능 평가  
 BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. BERT-Multilingual Model과 성능 비교 실험을 진행하였습니다. 하이퍼 파라미터는 모두 동일한 값으로 실험을 진행하였습니다. 실험 결과는 아래와 같습니다.   
 
