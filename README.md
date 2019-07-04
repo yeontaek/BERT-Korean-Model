@@ -105,6 +105,7 @@ BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.gi
 |---|:---:|---:|
 | BERT-Base, Multilingual Cased | 89.9% | 70.29% |
 | BERT-Base, Korean Model | 00% | 00% |
+| BERT-Large, Korean Model | 00% | 00% |
 
 ## 실험 
 
