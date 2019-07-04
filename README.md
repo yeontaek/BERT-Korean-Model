@@ -1,19 +1,23 @@
 # BERT with SentencePiece for Korean text
 This is a repository of Korean BERT model with SentencePiece tokenizer.
 
+* BERT-Base,Korean Model: 12-layer, 768-hidden, 12-heads, 110M parameters
+* BERT-Large, Korean Model: 24-layer, 1024-hidden, 16-heads, 340M parameters
+
 ## SentencePiece tokenizer 학습
- 한국어 전용 BERT 모델을 만들기 위해서는 한국어에 적합한 tokenizer로 수정할 필요가 있었습니다. 이를 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 4300만 문장(위키피디아, 나무위키, 뉴스 데이터) 중 2000만 문장을 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다.
+ 한국어 전용 BERT 모델을 만들기 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 1억 8천만 문장(위키피디아, 나무위키, 뉴스 데이터)을 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다. 모델 type은 <code>--model_type</code> 옵션을 이용하여 bpe type을 사용 하였습니다. 
  <br>
  
 ```python
 import sentencepiece as spm
 
-parameter = '--input={} --model_prefix={} --vocab_size={}'
+parameter = '--input={} --model_prefix={} --vocab_size={} --model_type={}'
 
 input_file = 'corpus.txt'
 vocab_size = 32000
 prefix = 'bert_kor'
-cmd = parameter.format(input_file, prefix, vocab_size)
+model_type = 'bpe'
+cmd = parameter.format(input_file, prefix, vocab_size, model_type)
 
 spm.SentencePieceTrainer.Train(cmd)
 ```   
@@ -37,7 +41,7 @@ spm.SentencePieceTrainer.Train(cmd)
 ```   
 <br>
 
-출력 예시
+SentencePiece 출력 예시
 ```python
 import sentencepiece as spm
 
@@ -48,10 +52,8 @@ print(token)
 
 ['▁나는', '▁오늘', '▁아침', '밥을', '▁먹었다', '.']
 ```   
-<br>
-
-## 사전 학습 데이터 준비
- <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터의 구성은 "Next sentence prediction" Task을 위해 한 줄에 한 문장씩 구성하고 Document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
+## 사전 학습 데이터 준비  
+create_pretraining_data.py를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터의 구성은 "Next sentence prediction" Task을 위해 한 줄에 한 문장씩 구성하고 Document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
  
 ~~~
 라 토스카(La Tosca)는 1887년에 프랑스 극작가 사르두가 배우 사라 베르나르를 위해 만든 작품이다.
@@ -73,27 +75,62 @@ print(token)
 그러나 최근에 도네 강, 고카이 강 등의 제방의 고기능화에 의해 하천의 범람에 의한 침수 피해는 거의 없어졌다.
 한편 집중호우에 의해 시내의 저지 등에서는 도로가 일부 침수하는 등의 피해가 일어난다.
 ~~~
-<br>
-
 ## BERT Pre-training
-SentencePiece 모델을 사용하기 위해 <code>tokenization.py</code>에 아래 코드를 추가하였습니다. 자세한 내용은 코드 참조바랍니다. 
-
+학습 시간 문제로 한국어 위키데이터(2019.01 dump file)을 사용하여 학습을 진행하였으며, 모델의 하이퍼파라미터는 논문과 동일하게 사용하였습니다. 오리지널 논문과 동일하게 구축하고자 n-gram masking은 적용하지 않았습니다. 학습 방법은 논문에 서술된 것처럼 128 length 90%, 512 length 10%씩 학습을 진행하여, 총 100만 step을 진행했습니다. 
+<br>
+<br>
+* 학습 파라미터(seq_length=128)
 ```python
-class SentencePieceTokenizer(object):
-  def __init__(self, model_file=None, do_lower_case=False):
-    self.tokenizer = spm.SentencePieceProcessor()
-    self.tokenizer.Load(model_file)
-    self.do_lower_case = do_lower_case
+learning_rate = 1e-4
+train_batch_size = 256 
+max_seq_length = 128
+masked_lm_prob = 0.15
+max_predictions_per_seq = 20
+num_train_steps = 900000
+```   
 
-  def tokenize(self, text):
-    text = convert_to_unicode(text)
-    output_tokens = self.tokenizer.EncodeAsPieces(text)
-    return output_tokens
-```
-<br>
+* 학습 파라미터(seq_length=512)
+```python
+learning_rate = 1e-4
+train_batch_size = 256 
+max_seq_length = 512
+masked_lm_prob = 0.15
+max_predictions_per_seq = 77
+num_train_steps = 100000
+```   
+* 학습 결과
 
-모델 매개 변수는 <code>learning_rate=2e-5</code>, <code>train_batch_size=32</code>, <code>max_seq_length=128</code>로 학습했습니다.
-<br>
-<br>
 
-## 성능 평가
+
+## 성능 평가  
+BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 평가하였습니다. 성능 비교를 위해 BERT-Multilingual Model과 실험을 진행하였으며, 하이퍼파라미터는 기본값으로 사용하였습니다. 성능 결과는 아래와 같습니다.   
+
+| BERT Model | F1 | EM |
+|---|:---:|---:|
+| BERT-Base, Multilingual Cased | 89.9% | 70.29% |
+| BERT-Base, Korean Model | 00% | 00% |
+| BERT-Large, Korean Model | 00% | 00% |
+
+## 실험 
+
+1. 데이터 전처리 관점
+
+- 내가 했을 때 ->
+- 이기창님 데이터 했을 때 ->
+
+2. 사전 구축 관점 
+
+
+3. 
+
+
+
+
+
+
+
+
+
+
+
+
