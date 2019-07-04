@@ -98,8 +98,6 @@ BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.gi
 | BERT-Base, Korean Model | 00% | 00% |
 | BERT-Large, Korean Model | 00% | 00% |
 
-
-<br>
 ## 실험 
 
 1. 데이터 전처리 관점
