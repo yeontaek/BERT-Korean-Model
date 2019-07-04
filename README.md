@@ -125,6 +125,7 @@ BERT Model 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.githu
 ## 기타
   해당 모델은 한국어 Pre-training 모델 연구와 실험을 위한 한국어 BERT Model입니다. 많은 데이터가 확보되었다면 더 나은 성능의 모델을 공개할 수 있었겠지만, 데이터 부족으로 인해 한국어 위키데이터로 학습된 모델을 공유합니다.
   <br>
+  <br>
   한국어 BERT Model 학습이나 모델 사용 관련하여 궁금한 사항이 있으시면 oh31400@naver.com 메일로 문의 부탁립니다. 
 
 
