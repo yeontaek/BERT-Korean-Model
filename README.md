@@ -115,7 +115,7 @@ INFO:tensorflow:  next_sentence_loss = 0.00018169895
 BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 평가하였습니다. 성능 비교를 위해 BERT-Multilingual Model과 실험을 진행하였으며, 하이퍼파라미터는 기본값으로 사용하였습니다. 성능 결과는 아래와 같습니다.   
 
 | Model | F1 |
-|---|:---:|---:|
+|---|:---:|
 | BiDAF (single) | 83% |
 | BERT-Base, Multilingual Cased (single) | 89.9% |
 | BERT-Base, Korean Model(our model) | 00% |
