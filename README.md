@@ -2,7 +2,7 @@
 This is a repository of Korean BERT model with SentencePiece tokenizer.
 
 ## SentencePiece tokenizer 학습
- 한국어 전용 BERT 모델을 만들기 위해서는 한국어에 적합한 tokenizer로 수정할 필요가 있었습니다. 이를 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 4300만 문장(위키피디아, 나무위키, 뉴스 데이터) 중 2000만 문장을 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다.
+ 한국어 전용 BERT 모델을 만들기 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 1억 8천만 문장(위키피디아, 나무위키, 뉴스 데이터) 중 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다. 모델 type은 <code>--model_type</code> 옵션을 이용하여 bpe type으로 구축하였습니다. 
  <br>
  
 ```python
@@ -76,23 +76,8 @@ print(token)
 <br>
 
 ## BERT Pre-training
-SentencePiece 모델을 사용하기 위해 <code>tokenization.py</code>에 아래 코드를 추가하였습니다. 자세한 내용은 코드 참조바랍니다. 
-
-```python
-class SentencePieceTokenizer(object):
-  def __init__(self, model_file=None, do_lower_case=False):
-    self.tokenizer = spm.SentencePieceProcessor()
-    self.tokenizer.Load(model_file)
-    self.do_lower_case = do_lower_case
-
-  def tokenize(self, text):
-    text = convert_to_unicode(text)
-    output_tokens = self.tokenizer.EncodeAsPieces(text)
-    return output_tokens
-```
-<br>
-
-모델 매개 변수는 <code>learning_rate=2e-5</code>, <code>train_batch_size=32</code>, <code>max_seq_length=128</code>로 학습했습니다.
+모델 매개 변수는 논문과 동일한 파라미터를 사용하였습니다. 학습 시간 문제로 한국어 위키데이터만을 사용하여 학습을 진행했습니다.
+<code>learning_rate=1e-4</code>, <code>train_batch_size=256</code>, <code>max_seq_length=128</code>
 <br>
 <br>
 
