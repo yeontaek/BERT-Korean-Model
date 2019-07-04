@@ -51,7 +51,7 @@ print(token)
 ```   
 <br>
 ## 사전 학습 데이터 준비
-[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터의 구성은 "Next sentence prediction" Task을 위해 한 줄에 한 문장씩 구성하고 Document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
+create_pretraining_data.py를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터의 구성은 "Next sentence prediction" Task을 위해 한 줄에 한 문장씩 구성하고 Document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
  
 ~~~
 라 토스카(La Tosca)는 1887년에 프랑스 극작가 사르두가 배우 사라 베르나르를 위해 만든 작품이다.
@@ -76,7 +76,7 @@ print(token)
 <br>
 
 ## BERT Pre-training
-학습 시간 문제로 한국어 위키데이터만을 사용하여 학습을 진행하였으며, 모델의 하이퍼파라미터는 논문과 동일하게 사용하였습니다. 또한 논문에 나와있는 것처럼 128 length 90%, 512 length 10%씩 학습을 진행하였으며, 총 100만 step을 진행했습니다.
+학습 시간 문제로 한국어 위키데이터만을 사용하여 학습을 진행하였으며, 모델의 하이퍼파라미터는 논문과 동일하게 사용하였습니다. 오리지널 논문과 동일하게 구축하고자 n-gram masking은 적용하지 않았습니다. 마지막으로 학습 방법은 논문에 나와있는 것처럼 128 length 90%, 512 length 10%씩 학습을 진행하여, 총 100만 step을 진행했습니다. 
 <br>
 <br>
 학습 파라미터(base model 기준)
