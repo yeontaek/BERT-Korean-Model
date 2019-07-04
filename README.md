@@ -49,7 +49,6 @@ print(token)
 ['▁나는', '▁오늘', '▁아침', '밥을', '▁먹었다', '.']
 ```   
 <br>
-
 ## 사전 학습 데이터 준비
  <code>[create_pretraining_data.py](https://github.com/google-research/bert/blob/master/create_pretraining_data.py)</code>를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터의 구성은 "Next sentence prediction" Task을 위해 한 줄에 한 문장씩 구성하고 Document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
  
@@ -91,3 +90,24 @@ max_predictions_per_seq = 20
 <br>
 
 ## 성능 평가
+BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다.
+
+
+| BERT Model | F1 | EM |
+|---|:---:|---:|
+| `BERT-Base, Multilingual Cased` | 89% | 70% |
+| `BERT-Base, Korean Model` | 73% | 43% |
+| `BERT-Large, Korean Model` | 88% | 59% |
+
+
+
+
+
+
+
+
+
+
+
+
+
