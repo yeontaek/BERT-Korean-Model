@@ -5,7 +5,7 @@ This is a repository of Korean BERT model with SentencePiece tokenizer.
 * [BERT-Large, Korean Model: 24-layer, 1024-hidden, 16-heads, 340M parameters]
 
 ## SentencePiece tokenizer 학습
- 한국어 전용 BERT 모델을 만들기 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 1억 8천만 문장(위키피디아, 나무위키, 뉴스 데이터)을 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다. 모델 type은 <code>--model_type</code> 옵션을 이용하여 bpe type으로 구축하였습니다. 
+ 한국어 전용 BERT 모델을 만들기 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 1억 8천만 문장(위키피디아, 나무위키, 뉴스 데이터)을 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다. 모델 type은 <code>--model_type</code> 옵션을 이용하여 bpe type을 사용 하였습니다. 
  <br>
  
 ```python
@@ -76,7 +76,7 @@ create_pretraining_data.py를 사용하여 BERT pre-training에 적합한 <code>
 한편 집중호우에 의해 시내의 저지 등에서는 도로가 일부 침수하는 등의 피해가 일어난다.
 ~~~
 ## BERT Pre-training
-학습 시간 문제로 한국어 위키데이터만을 사용하여 학습을 진행하였으며, 모델의 하이퍼파라미터는 논문과 동일하게 사용하였습니다. 오리지널 논문과 동일하게 구축하고자 n-gram masking은 적용하지 않았습니다. 학습 방법은 논문에 나와있는 것처럼 128 length 90%, 512 length 10%씩 학습을 진행하여, 총 100만 step을 진행했습니다. 
+학습 시간 문제로 한국어 위키데이터만을 사용하여 학습을 진행하였으며, 모델의 하이퍼파라미터는 논문과 동일하게 사용하였습니다. 오리지널 논문과 동일하게 구축하고자 n-gram masking은 적용하지 않았습니다. 학습 방법은 논문에 서술된 것처럼 128 length 90%, 512 length 10%씩 학습을 진행하여, 총 100만 step을 진행했습니다. 
 <br>
 <br>
 학습 파라미터(base model 기준)
@@ -89,7 +89,7 @@ max_predictions_per_seq = 20
 num_train_steps = 900000
 ```   
 ## 성능 평가  
-BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. 파라미터는 모두 동일한 값으로 실험을 진행하였습니다.  
+BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. BERT-Multilingual Model과 성능 비교 실험을 진행하였습니다. 하이퍼 파라미터는 모두 동일한 값으로 실험을 진행하였습니다. 실험 결과는 아래와 같습니다.   
 
 | BERT Model | F1 | EM |
 |---|:---:|---:|
