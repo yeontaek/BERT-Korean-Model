@@ -41,7 +41,7 @@ spm.SentencePieceTrainer.Train(cmd)
 ```   
 <br>
 
-출력 예시
+SentencePiece 출력 예시
 ```python
 import sentencepiece as spm
 
