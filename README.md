@@ -76,8 +76,15 @@ print(token)
 <br>
 
 ## BERT Pre-training
-모델 매개 변수는 논문과 동일한 파라미터를 사용하였습니다. 학습 시간 문제로 한국어 위키데이터만을 사용하여 학습을 진행했습니다.
-<code>learning_rate=1e-4</code>, <code>train_batch_size=256</code>, <code>max_seq_length=128</code>
+모델 매개 변수는 논문과 동일한 파라미터를 사용하였습니다. 또한 학습 시간 문제로 인해 한국어 위키데이터만을 사용하여 학습을 진행했습니다.
+<br>
+```python
+learning_rate=1e-4
+train_batch_size=256 
+max_seq_length=128
+masked_lm_prob=0.15
+max_predictions_per_seq = 20
+```   
 <br>
 <br>
 
