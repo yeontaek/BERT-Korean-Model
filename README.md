@@ -98,7 +98,16 @@ masked_lm_prob = 0.15
 max_predictions_per_seq = 77
 num_train_steps = 100000
 ```   
-* 학습 결과
+* 최종 학습 결과
+```python
+INFO:tensorflow:  ***** Eval results *****
+INFO:tensorflow:  global_step = 900000
+INFO:tensorflow:  loss = 1.2067676
+INFO:tensorflow:  masked_lm_accuracy = 0.71964335
+INFO:tensorflow:  masked_lm_loss = 1.2389321
+INFO:tensorflow:  next_sentence_accuracy = 0.9998438
+INFO:tensorflow:  next_sentence_loss = 0.00018169895
+``` 
 
 
 
