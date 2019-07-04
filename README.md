@@ -83,6 +83,7 @@ train_batch_size = 256
 max_seq_length = 128
 masked_lm_prob = 0.15
 max_predictions_per_seq = 20
+num_train_steps = 900000
 ```   
 ## 성능 평가  
 BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. 파라미터는 모두 동일한 값으로 실험을 진행하였습니다.  
