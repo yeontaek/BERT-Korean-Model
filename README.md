@@ -76,16 +76,15 @@ print(token)
 <br>
 
 ## BERT Pre-training
-모델 매개 변수는 논문과 동일한 파라미터를 사용하였습니다. 또한 학습 시간 문제로 인해 한국어 위키데이터만을 사용하여 학습을 진행했습니다.
+학습 시간 문제로 인해 한국어 위키데이터만을 사용하여 학습을 진행하였으며, 모델 매개 변수는 논문과 동일한 파라미터를 사용하였습니다. 또한 논문에 나와있는 것처럼 전체 학습을 128 length로 90%, 512 length로 나머지 10%씩 진행하였으며 총 100만 step을 진행했습니다. 
 <br>
 ```python
-learning_rate=1e-4
-train_batch_size=256 
-max_seq_length=128
-masked_lm_prob=0.15
+learning_rate = 1e-4
+train_batch_size = 256 
+max_seq_length = 128
+masked_lm_prob = 0.15
 max_predictions_per_seq = 20
 ```   
-<br>
 <br>
 
 ## 성능 평가
