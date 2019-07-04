@@ -50,6 +50,7 @@ print(token)
 ['▁나는', '▁오늘', '▁아침', '밥을', '▁먹었다', '.']
 ```   
 <br>
+<br>
 ## 사전 학습 데이터 준비  
 create_pretraining_data.py를 사용하여 BERT pre-training에 적합한 <code>.tfrecord</code> 파일 형식으로 변환하였습니다. 학습 데이터의 구성은 "Next sentence prediction" Task을 위해 한 줄에 한 문장씩 구성하고 Document 사이에는 빈 줄을 삽입할 것을 권장하고 있습니다.
  
@@ -86,6 +87,7 @@ max_seq_length = 128
 masked_lm_prob = 0.15
 max_predictions_per_seq = 20
 ```   
+<br>
 <br>
 ## 성능 평가
 BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. 파라미터는 모두 동일한 값으로 실험을 진행하였습니다.  
