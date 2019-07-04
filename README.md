@@ -99,7 +99,7 @@ max_predictions_per_seq = 77
 num_train_steps = 100000
 ```   
 ## 성능 평가  
-BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. BERT-Multilingual Model과 성능 비교 실험을 진행하였습니다. 하이퍼 파라미터는 모두 동일한 값으로 실험을 진행하였습니다. 실험 결과는 아래와 같습니다.   
+BERT Model을 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.github.io/)로 진행하였습니다. BERT-Multilingual Model과 성능 비교 실험을 진행하였으며, 하이퍼 파라미터는 모두 동일한 값으로 사용하였습니다. 성능 평과 결과는 아래와 같습니다.   
 
 | BERT Model | F1 | EM |
 |---|:---:|---:|
