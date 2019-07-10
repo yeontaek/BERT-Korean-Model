@@ -104,9 +104,7 @@ BERT Model 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.githu
 
 | Model | F1(Dev Set 기준) |
 |:---:|:---:|
-| BiDAF (single) | 83% |
-| DocQA (single) | 85.91% |
-| BERT-Base, Multilingual Cased (single) | 89.9% |
+| BERT-Base, Multilingual Cased | 89.9% |
 | **BERT-Base, Korean Model(our model)** | 87.8% |
 | **BERT-Large, Korean Model(our model)** | 00% |
 
