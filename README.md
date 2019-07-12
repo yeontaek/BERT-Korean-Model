@@ -2,7 +2,7 @@
 This is a repository of Korean BERT model with SentencePiece tokenizer.
 
 * [BERT-Base, Korean Model: 12-layer, 768-hidden, 12-heads, 110M parameters](https://drive.google.com/drive/folders/1Azwr-RGTlpJt2jbfAymjKde8E-jkhJv6?usp=sharing)
-* BERT-Large, Korean Model: 24-layer, 1024-hidden, 16-heads, 340M parameters
+* BERT-Large, Korean Model: 24-layer, 1024-hidden, 16-heads, 340M parameters(close)
 
 ## SentencePiece tokenizer 학습
  한국어 전용 BERT 모델을 만들기 위해 Google의 [SentencePiece](https://github.com/google/sentencepiece)을 사용하였습니다. 약 1억 8천만 문장(위키피디아, 나무위키, 뉴스 데이터)을 활용하여 32,000개의 vocabulary (subwords)를 학습하였습니다. 모델 type은 <code>--model_type</code> 옵션을 이용하여 bpe type을 사용 하였습니다. 
@@ -121,7 +121,7 @@ Base Model 기준으로 총 120만 step을 학습 시켜보았습니다. 각 ste
 
 
 ## 기타
-  해당 모델은 한국어 Pre-training 모델 연구와 실험을 위한 한국어 BERT Model입니다. 모델 사용시 반드시 출처를 밝혀주시길 바랍니다.
+  Base model 한국어 Pre-training 모델 연구와 실험을 위한 한국어 BERT Model입니다. 한국어 위키피디아 데이터로만 사용해서 개인 장비로 학습 시킨 모델입니다. 모델 사용시 반드시 출처를 밝혀주시길 바랍니다.
   <br>
   <br>
   한국어 BERT Model 학습이나 모델 사용 관련하여 궁금한 사항이 있으시면 oh31400@naver.com 메일로 문의 부탁립니다. 
