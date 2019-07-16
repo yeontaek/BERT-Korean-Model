@@ -110,7 +110,8 @@ BERT Model 성능 평가는 한국어 SQuAD Task [KorQuAD](https://korquad.githu
 ## 추가 실험
 Base Model 기준으로 총 120만 step을 학습 시켜보았습니다. 각 step별 KorQuAD Task의 F1 Score는 아래와 같습니다. 100만 Step 이상 학습을 진행했을 경우에도 F1 Score가 늘어나는 것을 확인할 수 있었습니다. 
 
-*Base Model
+*Base Model<br>
+
 | Step | seq_length | F1 |
 |:---:|:---:|:---:|
 | 40만 | 128 | 73.98% |
@@ -120,7 +121,8 @@ Base Model 기준으로 총 120만 step을 학습 시켜보았습니다. 각 ste
 | 120만 | 512 | 88.19% |
 
 
-*Large Model
+*Large Model<br>
+
 | Step | seq_length | F1 |
 |:---:|:---:|:---:|
 | 40만 | 128 | 00% |
