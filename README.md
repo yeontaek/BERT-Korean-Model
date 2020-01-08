@@ -90,7 +90,7 @@ num_train_steps = 900000
 
 * 학습 파라미터(seq_length=512)
 ```python
-learning_rate = 1e-4
+learning_rate = 2e-5
 train_batch_size = 256 
 max_seq_length = 512
 masked_lm_prob = 0.15
